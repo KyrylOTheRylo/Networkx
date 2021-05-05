@@ -18,5 +18,5 @@ pos["9"]=[4.4,-0.1]
 pos["10"]=[5.1,0.3]
 pos["13"]=[5,2]
 nx.draw(G, pos=pos, with_labels=True, font_weight='bold', node_color="black", edge_color="black",font_color="w")
-plt.show()
 plt.savefig('processed.png')
+plt.show()
