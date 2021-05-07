@@ -65,7 +65,7 @@ def part3_4():
     """)
     tmp_node=new_edges(tmp_edges_global)
     nx.draw_networkx_nodes(G, pos=set_own_pos(), nodelist=tmp_node, node_color='r')
-    # plt.savefig('diam.png')
+
 
 
 
@@ -90,13 +90,15 @@ PART 2
 
 nx.draw(G, pos=set_own_pos(), with_labels=True, font_weight='bold', node_color="black", edge_color="black",
         font_color="w")
-
+plt.savefig('processed.png')
+plt.show()
+plt.close()
 """
 PART 3-4
 """
 
 part3_4()
-# plt.savefig('processed.png')
+plt.savefig('diam.png')
 plt.show()
 plt.close()
 """
@@ -106,6 +108,6 @@ tmp_edges = []
 for el in (nx.dfs_edges(G)):
     tmp_edges.append(el)
 new_edges(tmp_edges)
-# plt.savefig('forest.png')
+plt.savefig('forest.png')
 plt.show()
 plt.close()
