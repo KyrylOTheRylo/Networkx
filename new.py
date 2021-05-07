@@ -72,11 +72,11 @@ def part3_4():
 PART 1
 """
 my_graph = nx.Graph()
-f = open("2.txt", "r")
+f = open("data.txt", "r")
 plt.figure(figsize=(8, 8))
 
 plt.axes().set_aspect("equal", adjustable="datalim")
-G = nx.read_adjlist("2.txt")
+G = nx.read_adjlist("data.txt")
 
 nx.draw_circular(G, with_labels=True, font_weight='bold', node_color="black", edge_color="black", font_color="w")
 plt.savefig('simple.png')
