@@ -32,38 +32,48 @@ def new_edges(tuple_):
 def part3_4():
     n = 1
     tmp_edges_global = []
-    for x in (nx.connected_components(G)):
-        tmp = nx.subgraph(G, x)
-        print(f"-------Begin of the component {n}-------")
+    with open("output.txt", 'w') as out:
 
-        x = sorted(x, key=float)
+        for x in (nx.connected_components(G)):
+            tmp = nx.subgraph(G, x)
 
-        print(f'nodes = {len(x)} ')
-        print(f'edges = {len(G.edges(x))}')
-        eccentr = nx.eccentricity(tmp)
-        for node_ in x:
-            print(f"~~~~~~~~Node {node_}~~~~~~~~")
-            print(f'''degree: {G.degree[node_]}''')
-            print(f'''eccentricity: {eccentr[node_]}''')
-        print("")
-        diam = nx.diameter(tmp, eccentr)
-        print(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
-        print(f'''Diameter of the component {n} = {diam}''')
-        tmp_edges = []
+            print(f"-------Begin of the component {n}-------")
+            out.write(f"-------Begin of the component {n}-------")
+            x = sorted(x, key=float)
 
-        for node1 in x:
-            for node2 in x:
-                for path in (nx.all_simple_edge_paths(tmp, node1, node2)):
-                    if len(list(path)) == diam:
-                        tmp_edges.append(path)
-        random_edges = random.choice(tmp_edges)
-        tmp_edges_global.extend(random_edges)
+            print(f'nodes = {len(x)} ')
+            out.write(f'nodes = {len(x)} ')
+            print(f'edges = {len(G.edges(x))}')
+            out.write(f'edges = {len(G.edges(x))}')
+            eccentr = nx.eccentricity(tmp)
+            for node_ in x:
+                print(f"~~~~~~~~Node {node_}~~~~~~~~")
+                out.write("~~~~~~~~Node {node_}~~~~~~~~")
+                print(f'''degree: {G.degree[node_]}''')
+                out.write(f'''degree: {G.degree[node_]}''')
+                print(f'''eccentricity: {eccentr[node_]}''')
+                out.write(f'''eccentricity: {eccentr[node_]}''')
+            print("")
+            out.write("")
+            diam = nx.diameter(tmp, eccentr)
+            print(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
+            out.write(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
+            print(f'''Diameter of the component {n} = {diam}''')
+            out.write(f'''Diameter of the component {n} = {diam}''')
+            tmp_edges = []
 
-        print(f"--------End of the component {n}--------\n")
-        n += 1
-    print("""
-    PART 4
-    """)
+            for node1 in x:
+                for node2 in x:
+                    for path in (nx.all_simple_edge_paths(tmp, node1, node2)):
+                        if len(list(path)) == diam:
+                            tmp_edges.append(path)
+            random_edges = random.choice(tmp_edges)
+            tmp_edges_global.extend(random_edges)
+
+            print(f"--------End of the component {n}--------\n")
+            out.write(f"--------End of the component {n}--------\n")
+            n += 1
+
     tmp_node = new_edges(tmp_edges_global)
     nx.draw_networkx_nodes(G, pos=set_own_pos(), nodelist=tmp_node, node_color='r')
 

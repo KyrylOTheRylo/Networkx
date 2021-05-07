@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fb0d8e2-62bf-4295-9f4e-09738ee5df86" name="Default Changelist" comment="version 6.0">
+    <list default="true" id="2fb0d8e2-62bf-4295-9f4e-09738ee5df86" name="Default Changelist" comment="version 9.0">
+      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Untitled.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diam.png" beforeDir="false" afterPath="$PROJECT_DIR$/diam.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forest.png" beforeDir="false" afterPath="$PROJECT_DIR$/forest.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new.py" beforeDir="false" afterPath="$PROJECT_DIR$/new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processed.png" beforeDir="false" afterPath="$PROJECT_DIR$/processed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple.png" beforeDir="false" afterPath="$PROJECT_DIR$/simple.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +39,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/new.py" />
   </component>
   <component name="RecentsManager">
@@ -113,7 +121,35 @@
       <option name="project" value="LOCAL" />
       <updated>1620370404328</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="version 7.0">
+      <created>1620376671435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620376671435</updated>
+    </task>
+    <task id="LOCAL-00005" summary="version 7.0">
+      <created>1620376776144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620376776144</updated>
+    </task>
+    <task id="LOCAL-00006" summary="version 8.0">
+      <created>1620376867923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620376867923</updated>
+    </task>
+    <task id="LOCAL-00007" summary="version 9.0">
+      <created>1620377150044</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620377150045</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +168,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version 2.0" />
     <MESSAGE value="version 6.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 6.0" />
+    <MESSAGE value="version 7.0" />
+    <MESSAGE value="version 8.0" />
+    <MESSAGE value="version 9.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 9.0" />
   </component>
 </project>
