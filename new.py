@@ -76,7 +76,7 @@ def part3():
         for node1 in x:
             for node2 in x:
                 for path in (nx.all_simple_edge_paths(tmp, node1, node2)):
-                    if len(list(path)) == 1 + diam:
+                    if len(list(path)) ==  diam:
                         tmp_edges.append(path)
         random_edges = random.choice(tmp_edges)
         tmp_edges_global.extend(random_edges)
@@ -85,6 +85,7 @@ def part3():
         n += 1
     new_edges(tmp_edges_global)
     plt.show()
+    plt.close()
 
 
 part3()
