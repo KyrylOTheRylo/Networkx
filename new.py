@@ -14,44 +14,21 @@ def set_own_pos():
 
 
 def new_edges(tuple_):
+    tmp_node = []
+    for elements in tuple_:
+        for node_ in elements:
+            if node_ not in tmp_node:
+                tmp_node.append(node_)
     G.remove_edges_from(tuple_)
 
     nx.draw(G, pos=set_own_pos(), with_labels=True, font_weight='bold', node_color="black", edge_color="black",
             font_color="w")
     G.add_edges_from(tuple_)
+
     nx.draw_networkx_edges(G, pos=set_own_pos(), edgelist=tuple_, edge_color='r')
+    return tmp_node
 
-
-"""
-PART 1
-"""
-my_graph = nx.Graph()
-f = open("2.txt", "r")
-plt.figure(figsize=(8, 8))
-
-plt.axes().set_aspect("equal", adjustable="datalim")
-G = nx.read_adjlist("2.txt")
-
-nx.draw_circular(G, with_labels=True, font_weight='bold', node_color="black", edge_color="black", font_color="w")
-plt.savefig('simple.png')
-plt.show()
-plt.close()
-
-"""
-PART 2
-"""
-
-nx.draw(G, pos=set_own_pos(), with_labels=True, font_weight='bold', node_color="black", edge_color="black",
-        font_color="w")
-plt.savefig('processed.png')
-plt.show()
-plt.close()
-"""
-PART 3
-"""
-
-
-def part3():
+def part3_4():
     n = 1
     tmp_edges_global = []
     for x in (nx.connected_components(G)):
@@ -76,16 +53,59 @@ def part3():
         for node1 in x:
             for node2 in x:
                 for path in (nx.all_simple_edge_paths(tmp, node1, node2)):
-                    if len(list(path)) ==  diam:
+                    if len(list(path)) == diam:
                         tmp_edges.append(path)
         random_edges = random.choice(tmp_edges)
         tmp_edges_global.extend(random_edges)
 
         print(f"--------End of the component {n}--------\n")
         n += 1
-    new_edges(tmp_edges_global)
-    plt.show()
-    plt.close()
+    print("""
+    PART 4
+    """)
+    tmp_node=new_edges(tmp_edges_global)
+    nx.draw_networkx_nodes(G, pos=set_own_pos(), nodelist=tmp_node, node_color='r')
+    # plt.savefig('diam.png')
 
 
-part3()
+
+"""
+PART 1
+"""
+my_graph = nx.Graph()
+f = open("2.txt", "r")
+plt.figure(figsize=(8, 8))
+
+plt.axes().set_aspect("equal", adjustable="datalim")
+G = nx.read_adjlist("2.txt")
+
+nx.draw_circular(G, with_labels=True, font_weight='bold', node_color="black", edge_color="black", font_color="w")
+# plt.savefig('simple.png')
+plt.show()
+plt.close()
+
+"""
+PART 2
+"""
+
+nx.draw(G, pos=set_own_pos(), with_labels=True, font_weight='bold', node_color="black", edge_color="black",
+        font_color="w")
+
+"""
+PART 3-4
+"""
+
+part3_4()
+# plt.savefig('processed.png')
+plt.show()
+plt.close()
+"""
+PART 5
+"""
+tmp_edges = []
+for el in (nx.dfs_edges(G)):
+    tmp_edges.append(el)
+new_edges(tmp_edges)
+# plt.savefig('forest.png')
+plt.show()
+plt.close()
