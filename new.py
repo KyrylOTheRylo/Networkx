@@ -28,6 +28,7 @@ def new_edges(tuple_):
     nx.draw_networkx_edges(G, pos=set_own_pos(), edgelist=tuple_, edge_color='r')
     return tmp_node
 
+
 def part3_4():
     n = 1
     tmp_edges_global = []
@@ -63,10 +64,8 @@ def part3_4():
     print("""
     PART 4
     """)
-    tmp_node=new_edges(tmp_edges_global)
+    tmp_node = new_edges(tmp_edges_global)
     nx.draw_networkx_nodes(G, pos=set_own_pos(), nodelist=tmp_node, node_color='r')
-
-
 
 
 """
@@ -80,7 +79,7 @@ plt.axes().set_aspect("equal", adjustable="datalim")
 G = nx.read_adjlist("2.txt")
 
 nx.draw_circular(G, with_labels=True, font_weight='bold', node_color="black", edge_color="black", font_color="w")
-# plt.savefig('simple.png')
+plt.savefig('simple.png')
 plt.show()
 plt.close()
 
