@@ -38,28 +38,28 @@ def part3_4():
             tmp = nx.subgraph(G, x)
 
             print(f"-------Begin of the component {n}-------")
-            out.write(f"-------Begin of the component {n}-------")
+            out.writelines(f"-------Begin of the component {n}-------")
             x = sorted(x, key=float)
 
             print(f'nodes = {len(x)} ')
-            out.write(f'nodes = {len(x)} ')
+            out.writelines(f'nodes = {len(x)} ')
             print(f'edges = {len(G.edges(x))}')
-            out.write(f'edges = {len(G.edges(x))}')
+            out.writelines(f'edges = {len(G.edges(x))}')
             eccentr = nx.eccentricity(tmp)
             for node_ in x:
                 print(f"~~~~~~~~Node {node_}~~~~~~~~")
-                out.write("~~~~~~~~Node {node_}~~~~~~~~")
+                out.writelines("~~~~~~~~Node {node_}~~~~~~~~")
                 print(f'''degree: {G.degree[node_]}''')
-                out.write(f'''degree: {G.degree[node_]}''')
+                out.writelines(f'''degree: {G.degree[node_]}''')
                 print(f'''eccentricity: {eccentr[node_]}''')
-                out.write(f'''eccentricity: {eccentr[node_]}''')
+                out.writelines(f'''eccentricity: {eccentr[node_]}''')
             print("")
-            out.write("")
+            out.writelines("")
             diam = nx.diameter(tmp, eccentr)
             print(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
-            out.write(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
+            out.writelines(f'''Radius of the component {n} = {nx.radius(tmp, eccentr)}''')
             print(f'''Diameter of the component {n} = {diam}''')
-            out.write(f'''Diameter of the component {n} = {diam}''')
+            out.writelines(f'''Diameter of the component {n} = {diam}''')
             tmp_edges = []
 
             for node1 in x:
